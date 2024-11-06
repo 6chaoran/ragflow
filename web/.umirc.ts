@@ -34,7 +34,7 @@ export default defineConfig({
   proxy: [
     {
       context: ['/api', '/v1'],
-      target: 'http://127.0.0.1:9456/',
+      target: 'http://127.0.0.1:9380/', //'http://127.0.0.1:9456/', for dev mode
       changeOrigin: true,
       ws: true,
       logger: console,
