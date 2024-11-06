@@ -54,6 +54,10 @@ const OllamaModal = ({
     llmFactoryToUrlMap[llmFactory as LlmFactory] ||
     'https://github.com/infiniflow/ragflow/blob/main/docs/guides/deploy_local_llm.mdx';
   const optionsMap = {
+    MyOwnLLM: [
+      // [MyOwnLLM]
+      { value: 'chat', label: 'chat' },
+    ],
     HuggingFace: [
       { value: 'embedding', label: 'embedding' },
       { value: 'chat', label: 'chat' },

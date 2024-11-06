@@ -89,6 +89,29 @@ class Base(ABC):
 
         yield total_tokens
 
+class MyOwnLLM(Base): # [MyOwnLLM]
+    def __init__(self, key, model_name, base_url):
+        self.client = None
+        self.model_name = model_name
+        self.api_key = key
+        self.base_url = base_url
+
+    def chat(self, system, history, gen_conf):
+        prompt = history[-1]['content']
+        response = "Echo: you typed " + prompt
+        token_usage = len(prompt + response)
+        return response, token_usage
+    
+    def chat_streamly(self, system, history, gen_conf):
+        prompt = history[-1]['content']
+        response = "Echo: you typed " + prompt
+        ans = ""
+        for i in response:
+            ans += i
+            yield ans
+        token_usage = len(prompt + response)
+        yield token_usage
+
 
 class GptTurbo(Base):
     def __init__(self, key, model_name="gpt-3.5-turbo", base_url="https://api.openai.com/v1"):

@@ -21,6 +21,7 @@ export const UserSettingRouteMap = {
 
 // Please lowercase the file name
 export const IconMap = {
+  MyOwnLLM: 'myownllm', // [MyOwnLLM] logo filename
   'Tongyi-Qianwen': 'tongyi',
   Moonshot: 'moonshot',
   OpenAI: 'openai',

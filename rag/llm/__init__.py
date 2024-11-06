@@ -71,6 +71,7 @@ CvModel = {
 }
 
 ChatModel = {
+    "MyOwnLLM": MyOwnLLM,
     "OpenAI": GptTurbo,
     "Azure-OpenAI": AzureChat,
     "ZHIPU-AI": ZhipuChat,

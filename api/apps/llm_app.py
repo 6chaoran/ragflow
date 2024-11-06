@@ -143,6 +143,12 @@ def add_llm():
         llm_name = req["llm_name"]
         api_key = apikey_json(["ark_api_key", "endpoint_id"])
 
+    elif factory == "MyOwnLLM": #[MyOwnLLM]
+        print("setting myownllm")
+        print(req)
+        llm_name = req["llm_name"]
+        api_key = req["api_key"]
+
     elif factory == "Tencent Hunyuan":
         req["api_key"] = apikey_json(["hunyuan_sid", "hunyuan_sk"])
         return set_api_key()
